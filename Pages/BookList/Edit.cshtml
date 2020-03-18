@@ -1,15 +1,15 @@
 ﻿@page
-@model BookListRazor.Pages.BookList.CreateModel
+@model BookListRazor.Pages.BookList.EditModel
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
 
-
-<h2 class="text-info mt-5 mb-5">Create New Book</h2>
+<h2 class="text-info mt-5 mb-5">Edit Book</h2>
 
 <div class="border container p-4">
     <form method="post">
         <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <input type="hidden" asp-for="Book.id" />
         <div class="form-group row">
             <div class="col-2">
                 <label asp-for="Book.Name"></label>
@@ -45,7 +45,7 @@
         </div>
         <div class="offset-4 form-group row">
             <div class="col-3 list-inline-item">
-                <input type="submit" value="Create" class="btn  btn-primary form-control" />
+                <input type="submit" value="Update" class="btn  btn-primary form-control" />
             </div>
             <div class="col-3 list-inline-item">
                 <a asp-page="Index" class="btn  btn-success form-control">Back to List</a>
@@ -54,7 +54,9 @@
     </form>
 </div>
 
-@section Scripts{ 
+@section Scripts{
     <partial name="_ValidationScriptsPartial" />
 }
+
+
 
