@@ -43,7 +43,7 @@
                                     @Html.DisplayFor(m => item.ISBN)
                                 </td>
                                 <td>
-                                    <button class="btn btn-danger btn-sm mr-3">Delete</button>
+                                    <button asp-page-handler="Delete" asp-route-id="@item.id" class="btn delete btn-danger btn-sm mr-3">Delete</button>
                                     <a asp-page="Edit" asp-route-id="@item.id" class="btn btn-primary btn-sm">Edit </a>
                                 </td>
                             </tr>
@@ -58,3 +58,13 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    function deletePopup() {
+        return confirm('are you sure you want to delete?');
+    }
+
+    classOnClick("delete", function (e) {
+        deletePopup();
+    });
+</script>
